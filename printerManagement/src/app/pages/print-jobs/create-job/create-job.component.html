@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-6">
+    <nb-card>
+      <nb-card-header>Basic form</nb-card-header>
+      <nb-card-body>
+        <form ngNativeValidate>
+          <div class="form-group">
+            <label>File Name</label>
+            <input class="form-control" id="fileName" [(ngModel)]="data.fileName" required name="fileName" placeholder="File Name">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input class="form-control" id="description" [(ngModel)]="data.description" required name="description" placeholder="Description">
+          </div>
+          <div class="form-group">
+    
+            <input name="file" class="form-control-file" type="file" #inputFile required (change)="onFileChange($event)" />
+
+          </div>
+          <button type="submit" class="btn btn-danger" (click)=onSubmit()>Submit</button>
+        </form>
+      </nb-card-body>
+
+    </nb-card>
+  </div>
+</div>
+
+
+
+
+<!-- <form (ngSubmit)="onSubmit()">
+
+  <form>
+    <div class="row">
+      <label>Filename:</label>
+      <input name='firstName' type="text" [(ngModel)]="jobData.firstName" placeholder="Input Please">
+    </div>
+
+
+    <div class="row">
+      <label>Description:</label>
+      <input name='lastName' type="text" [(ngModel)]="jobData.lastName">
+    </div>
+
+    <input name="file" type="file" #inputFile (change)="onFileChange($event)" />
+  </form>
+
+  <div style="margin-bottom: 1em">
+    <button type="submit" class="btn btn-success">Save</button> &nbsp;
+  </div>
+
+  <form>
+    <div style="margin-bottom: 1em">
+      <button (click)="reset()" type="submit" class="btn btn-success">Reset</button> &nbsp;
+    </div>
+
+  </form> -->
+
+
+  <!-- <div class="col-md-4">
+    <nb-card>
+      <nb-card-header>
+        Upload new Job
+      </nb-card-header>
+      <nb-card-body>
+        <form id="resetForm">
+          <div class="input-group">
+            <input class="form-control" [(ngModel)]=newJob[0].firstName placeholder="Enter firstName">
+            <input class="form-control" [(ngModel)]=newJob[0].lastName placeholder="Enter lastName">
+            <br>
+          </div>
+          <label class="btn btn-default" > </label>
+          <input id="fileUpload" name="FileUpload" type="file" (change)="newJob[0].id = $event.target.files[0].name" />
+          <button class="btn float-right" (click)="makeNewJob()">Upload Job</button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div> -->
